@@ -1,69 +1,48 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-        <meta charset="UTF-8">
+        <!-- Bootstrap CSS -->
         <title>Login page</title>
-        <style>
-            .container {
-                text-align:  center;
-            }
-            table {
-                width: 500px; /* Ширина таблицы */
-                border: 1px solid black; /* Рамка вокруг таблицы */
-                margin: auto; /* Выравниваем таблицу по центру окна  */
-            }
-        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+              integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+              crossorigin="anonymous">
+        <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous"/>
     </head>
-    <body>
-    <div class="container" >
-
-        <h1>Login page</h1>
-
-        <form th:action="@{/login}" method="post">
-            <h2>Please sign in</h2>
-            <table>
-                <tr>
-                    <td>
-                        <label for="j_username">Username</label>:
-                    </td>
-
-                    <td>
-                        <input type="text" id="j_username" name="j_username"/>
-                    </td>
-
-                </tr>
-
-                <tr>
-                    <td>
-                        <label for="j_password">Password</label>:
-                    </td>
-
-                    <td>
-                        <input type="password" id="j_password" name="j_password"/>
-                    </td>
-
-                </tr>
-
-            </table>
-
-
-            <p><input type="submit" value="Log in" /></p>
-
+    <body class="text-center">
+    <div class="container">
+        <form action="/login" method="post" class="form-signin">
+            <h1 class="mb-3 font-weight-normal">Please sign in</h1>
+            <div>
+                <p>
+                    <label for="j_username" class="sr-only">Username</label>
+                    <input class="form-control" type="text" id="j_username" name="j_username" placeholder="User Name"/>
+                </p>
+            </div>
+            <div>
+                <p>
+                    <label for="j_password" class="sr-only">Password</label>
+                    <input class="form-control" type="password" id="j_password" name="j_password" placeholder="Password"/>
+                </p>
+            </div>
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+            </div>
+            <div>
+                <p>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+<!--                    <a class="btn btn-secondary btn-primary btn-block" href="/reg">Registration</a>-->
+                </p>
+            </div>
+            <!--<div>
+                <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
+            </div>-->
         </form>
-
-        <br>
-
-        <h4><a href="/reg">Registration</a></h4>
-
-        <br>
-
-        <h4><a href="/" th:href="@{/}">Back to home page</a></h4>
-
     </div>
-
     </body>
 </html>

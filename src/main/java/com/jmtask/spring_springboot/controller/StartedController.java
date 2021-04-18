@@ -7,14 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class StartedController {
 
-    @GetMapping("/login")
+    @GetMapping("/")
     public String LoginPage(){
         return "login";
     }
 
-    @GetMapping("/")
-    public String StartPage(){
-        return "../static/started-page";
-    }
 
 }

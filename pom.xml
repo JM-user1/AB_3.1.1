@@ -13,9 +13,18 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>spring_springboot</name>
     <description>Demo project for Spring Boot</description>
+
     <properties>
-        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <javax.servlet>4.0.0</javax.servlet>
+        <mysql.version>8.0.18</mysql.version>
+        <hb.manager>4.2.5.Final</hb.manager>
+        <junit.version>4.11</junit.version>
+        <spring.version>5.2.0.RELEASE</spring.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -23,19 +32,23 @@
             <version>4.11</version>
             <scope>test</scope>
         </dependency> <!--junit-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency> <!--spring-boot-starter-security-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency> <!--spring-boot-starter-thymeleaf-->
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency> <!--lombok-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -47,38 +60,47 @@
                 </exclusion>
             </exclusions>
         </dependency> <!--spring-boot-starter-test-->
+
+
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
         </dependency> <!--spring-security-test-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
         </dependency> <!--spring-boot-starter-tomcat-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency> <!--spring-boot-starter-data-jpa-->
+
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql.version}</version>
         </dependency> <!--mysql-connector-java-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.thymeleaf.extras</groupId>
             <artifactId>thymeleaf-extras-springsecurity5</artifactId>
             <version>3.0.4.RELEASE</version>
         </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
             <version>5.2.3.RELEASE</version>
         </dependency>
+
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
@@ -86,13 +108,23 @@
             <scope>compile</scope>
         </dependency>
 
-        <!--Для прссмотра изменений-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
-        </dependency>
+        </dependency><!--Для просмотра изменений-->
 
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>4.5.3</version>
+        </dependency> <!--bootstrap-->
 
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>3.5.1</version>
+        </dependency> <!--jquery-->
     </dependencies>
 
     <build>
