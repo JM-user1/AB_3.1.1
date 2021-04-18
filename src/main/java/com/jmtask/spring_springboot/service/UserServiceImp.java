@@ -25,35 +25,40 @@ public class UserServiceImp implements UserDetailsService, UserService{
 
     @Autowired
     UserServiceImp(UserRepo userRepo) {
+
         this.userRepo = userRepo;
     }
-    @Transactional
+
     @Override
     public void addUser(User user) {
+
         userRepo.save(user);
     }
-    @Transactional
+
     @Override
     public List<User> listUsers() {
+
         return userRepo.findAll();
     }
-    @Transactional
+
     @Override
     public void deleteUser(Long id) {
+
         userRepo.deleteById(id);
     }
-    @Transactional
+
     @Override
     public void updateUser(User user) {
+
         entityManager.merge(user);
     }
 
-    @Transactional
     @Override
     public User getUserById(Long id) {
+
         return userRepo.getOne(id);
     }
-    @Transactional
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepo.findByName(username);
