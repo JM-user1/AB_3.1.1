@@ -12,36 +12,36 @@
               crossorigin="anonymous">
         <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous"/>
     </head>
+
     <body class="text-center">
+
     <div class="container">
         <form action="/login" method="post" class="form-signin">
+
             <h1 class="mb-3 font-weight-normal">Please sign in</h1>
+
             <div>
                 <p>
                     <label for="j_username" class="sr-only">Username</label>
                     <input class="form-control" type="text" id="j_username" name="j_username" placeholder="User Name"/>
                 </p>
             </div>
+
             <div>
                 <p>
                     <label for="j_password" class="sr-only">Password</label>
                     <input class="form-control" type="password" id="j_password" name="j_password" placeholder="Password"/>
                 </p>
             </div>
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
-            </div>
+
+
             <div>
                 <p>
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 <!--                    <a class="btn btn-secondary btn-primary btn-block" href="/reg">Registration</a>-->
                 </p>
             </div>
-            <!--<div>
-                <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
-            </div>-->
+
         </form>
     </div>
     </body>

@@ -12,10 +12,19 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/user/**")
 public class UsersController {
 
+    final Converter converter;
+
+    public UsersController(Converter converter) {
+        this.converter = converter;
+    }
+
+
     @GetMapping("userPage")
     public ModelAndView showUserForm(@AuthenticationPrincipal User user) {
         ModelAndView modelAndView = new ModelAndView("/user/userPage");
+        String stringRoles = converter.roleSetToString(user);
         modelAndView.addObject("userData", user);
+        modelAndView.addObject("userRoles", stringRoles);
         return modelAndView;
     }
 }
