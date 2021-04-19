@@ -1,4 +1,4 @@
-package com.jmtask.spring_springboot.controller;
+package com.jmtask.spring_springboot.converter;
 
 import com.jmtask.spring_springboot.model.User;
 import com.jmtask.spring_springboot.model.UserRole;

@@ -1,6 +1,6 @@
 package com.jmtask.spring_springboot.security;
 
-import com.jmtask.spring_springboot.security.handler.LoginSuccessHandler;
+import com.jmtask.spring_springboot.handler.LoginSuccessHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

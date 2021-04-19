@@ -1,4 +1,4 @@
-package com.jmtask.spring_springboot.security.handler;
+package com.jmtask.spring_springboot.handler;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;

@@ -1,5 +1,6 @@
 package com.jmtask.spring_springboot.controller;
 
+import com.jmtask.spring_springboot.converter.Converter;
 import com.jmtask.spring_springboot.model.User;
 import com.jmtask.spring_springboot.service.RoleService;
 import com.jmtask.spring_springboot.service.UserService;
@@ -8,11 +9,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.List;
 import java.util.Set;
 
 @Controller
-@RequestMapping("admin/**")
+@RequestMapping("admin/")
 public class AdminController {
 
     final UserService userService;
