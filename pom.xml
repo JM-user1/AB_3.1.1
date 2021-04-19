@@ -125,7 +125,13 @@
             <artifactId>jquery</artifactId>
             <version>3.5.1</version>
         </dependency> <!--jquery-->
+
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-springsecurity5</artifactId>
+        </dependency>
     </dependencies>
+
 
     <build>
         <plugins>

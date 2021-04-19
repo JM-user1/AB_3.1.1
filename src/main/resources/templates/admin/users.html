@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml"
+      lang="en">
 
     <head>
         <meta charset="utf-8">
@@ -33,15 +34,17 @@
             <div class="row">
 <!-- ************************************************************ левая панель  *******************************************************************-->
                 <nav class="col-md-2 sidebar">
+
                     <div>
                         <a class="btn btn-outline-primary btn-block" href="/admin/users" role="button">ADMIN</a>
                     </div>
 
                     <br>
 
-                    <div>
+                    <div  sec:authorize="hasAuthority('ADMIN')">
                         <a class="btn btn-outline-primary btn-block" href="/user/userPage" role="button">USER</a>
                     </div>
+
                 </nav>
 
 <!-- ******************************************************* Панель админа **********************************************************************-->

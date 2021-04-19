@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml"
+      lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -34,6 +36,13 @@
         <div class="row">
 
             <nav class="col-md-2 sidebar">
+
+                <div sec:authorize="hasAuthority('ADMIN')">
+                    <a class="btn btn-outline-primary btn-block" href="/admin/users" role="button">ADMIN</a>
+
+                    <br>
+                </div>
+
                 <div>
                     <a class="btn btn-outline-primary btn-block" href="/user/userPage" role="button">USER</a>
                 </div>
