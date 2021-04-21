@@ -10,16 +10,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Service
 @Transactional
 public class UserServiceImp implements UserDetailsService, UserService{
-
-    @PersistenceContext
-    EntityManager entityManager;
 
     UserRepo userRepo;
 
@@ -50,7 +45,7 @@ public class UserServiceImp implements UserDetailsService, UserService{
     @Override
     public void updateUser(User user) {
 
-        entityManager.merge(user);
+        userRepo.saveAndFlush(user);
     }
 
     @Override

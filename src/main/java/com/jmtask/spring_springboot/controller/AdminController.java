@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.Set;
 
 @Controller
-@RequestMapping("admin/")
+@RequestMapping("/admin/")
 public class AdminController {
 
     final UserService userService;
@@ -41,8 +41,11 @@ public class AdminController {
 
     @PostMapping("updateUser")
     public ModelAndView updateUser(@RequestParam("roles") Set<String> roles, @AuthenticationPrincipal User admin, User user) {
+
         user.setRoleSet(roleService.getRoleSet(roles));
+
         userService.updateUser(user);
+
         return getModelAndView(admin);
     }
 
