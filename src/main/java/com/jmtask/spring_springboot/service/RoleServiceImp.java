@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Set;
 
 @Service
-@Transactional
+
 public class RoleServiceImp implements RoleService {
 
     public final RoleRepo roleRepo;
@@ -19,13 +19,14 @@ public class RoleServiceImp implements RoleService {
 
         this.roleRepo = roleRepo;
     }
-
+    @Transactional
     @Override
     public Set<UserRole> getRoleSet(Set<String> roles) {
 
         return roleRepo.getRolesByNameIn(roles);
     }
 
+    @Transactional
     @Override
     public UserRole getDefaultRole() {
         String defaultRoleName = "USER";

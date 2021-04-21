@@ -2,64 +2,63 @@ package com.jmtask.spring_springboot.service;
 
 
 import com.jmtask.spring_springboot.model.User;
+import com.jmtask.spring_springboot.model.UserRole;
 import com.jmtask.spring_springboot.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
-@Transactional
-public class UserServiceImp implements UserDetailsService, UserService{
+public class UserServiceImp implements UserService {
 
     UserRepo userRepo;
+    @Autowired
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Autowired
-    UserServiceImp(UserRepo userRepo) {
+    UserServiceImp(UserRepo userRepo, BCryptPasswordEncoder bCryptPasswordEncoder) {
 
         this.userRepo = userRepo;
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
+    @Transactional
     @Override
     public void addUser(User user) {
-
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         userRepo.save(user);
     }
 
+    @Transactional
     @Override
     public List<User> listUsers() {
 
         return userRepo.findAll();
     }
 
+    @Transactional
     @Override
     public void deleteUser(Long id) {
 
         userRepo.deleteById(id);
     }
 
+    @Transactional
     @Override
     public void updateUser(User user) {
 
         userRepo.saveAndFlush(user);
     }
 
+    @Transactional
     @Override
     public User getUserById(Long id) {
 
         return userRepo.getOne(id);
     }
 
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepo.findByName(username);
-        if (user == null) {
-            throw new UsernameNotFoundException("User not found");
-        }
-        return user;
-    }
 }
