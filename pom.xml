@@ -19,7 +19,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <javax.servlet>4.0.0</javax.servlet>
-        <mysql.version>8.0.18</mysql.version>
+        <mysql.version>8.0.21</mysql.version>
         <hb.manager>4.2.5.Final</hb.manager>
         <junit.version>4.11</junit.version>
         <spring.version>5.2.0.RELEASE</spring.version>
@@ -92,7 +92,6 @@
         <dependency>
             <groupId>org.thymeleaf.extras</groupId>
             <artifactId>thymeleaf-extras-springsecurity5</artifactId>
-            <version>3.0.4.RELEASE</version>
         </dependency>
 
         <dependency>
@@ -126,17 +125,9 @@
             <version>3.5.1</version>
         </dependency> <!--jquery-->
 
-        <dependency>
-            <groupId>org.thymeleaf.extras</groupId>
-            <artifactId>thymeleaf-extras-springsecurity5</artifactId>
-        </dependency>
 
 
-        <dependency>
-            <groupId>com.fasterxml.jackson.datatype</groupId>
-            <artifactId>jackson-datatype-hibernate5</artifactId>
-            <version>2.8.4</version>
-        </dependency>
+
     </dependencies>
 
 
